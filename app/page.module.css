@@ -18,17 +18,56 @@
     display: grid;
     grid-row: 1 / 5;
     grid-column: 1 / 5;
+    z-index: -1;
+
 }
 
 
 .border-image {
     display: grid;
-    grid-row: 2 / 8;
+    grid-row: 2 / 7;
     grid-column: 2 / 8;
+    z-index: 1;
 }
 
 .human-image {
     display: grid;
-    grid-row: 3 / 12;
-    grid-column: 3 / 12;
+    grid-row: 3 / 7;
+    grid-column: 3 / 9;
+    transform: scale(1.0);
+    overflow: hidden;
+    z-index: 0;
+
+
+
+}
+
+.human-image img {
+    transition: all 0.2s;
+    height: 100%;
+}
+
+.human-image-overlay {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #783aa824;
+    /* background-image: url('../public/zoom-icon.svg');
+    background-size: 50px 50px;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+}
+
+.border-image:hover+.human-image .human-image-overlay, .human-image:hover .human-image-overlay {
+    opacity: 1;
+}
+
+.border-image:hover+.human-image img, .human-image:hover img {
+    color: red;
+    transform: scale(1.2);
+    
 }

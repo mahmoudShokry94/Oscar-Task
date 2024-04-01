@@ -3,19 +3,22 @@ import styles from "./page.module.css";
 import BorderBackground from "@/public/border-image.svg";
 import DottedBackground from "@/public/dott-image.svg";
 import HumanImage from "@/public/humanImage.png";
+import ZoomImage from "@/public/zoom-icon.svg";
 
 export default function Home() {
   return (
     <main>
-      <div className="container w-4/5 bg-red-100 m-auto flex justify-between mt-24 gap-48">
-        <div className="about-section flex-1">
-          <small className="text-[1rem]">About Us</small>
-          <p
-            className={`${styles["about__title"]} font-bold text-[2.875rem] whitespace-nowrap`}
-          >
-            WHO WE ARE
-          </p>
-          <p className="my-10">
+      <div className="container w-4/6 m-auto flex justify-between mt-24 gap-1">
+        <div className="about-section flex-1 flex flex-col justify-between p-10 pb-0">
+          <div>
+            <small className="text-[1rem]">About Us</small>
+            <p
+              className={`${styles["about__title"]} font-bold text-[2.875rem] whitespace-nowrap`}
+            >
+              WHO WE ARE
+            </p>
+          </div>
+          <p className="my-10 text-[1rem]">
             Speed Architectural Technology Co, a SPEETECH group of company in
             AlKhobar, is one of the leading Contracting & Trading companies in
             Saudi Arabia undertaking major Civil, Mechanical, Piping, Fire
@@ -29,14 +32,21 @@ export default function Home() {
             excellence within its field. With professional expertise and the
             highest classification and qualifications with
           </p>
-          <button className="bg-[#783AA8] p-3 text-white rounded-sm">
-            Read More {"-->"}
-          </button>
+          <div className="button-warpper">
+            <button className="bg-[#783AA8] p-3 text-white rounded-sm">
+              Read More {"-->"}
+            </button>
+          </div>
         </div>
         <div className={`${styles["image-section"]} flex-1`}>
           <Image src={DottedBackground} className={styles["dotted-image"]} />
           <Image src={BorderBackground} className={styles["border-image"]} />
-          <Image src={HumanImage} className={styles["human-image"]} />
+          <div className={styles["human-image"]}>
+            <Image src={HumanImage} />
+            <div className={styles["human-image-overlay"]}>
+              <Image src={ZoomImage} />
+            </div>
+          </div>
         </div>
       </div>
     </main>
