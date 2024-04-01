@@ -9,12 +9,12 @@ export default function Home() {
     <main>
       <div className="container w-4/5 bg-red-100 m-auto flex justify-between mt-24 gap-48">
         <div className="about-section flex-1">
-          <p className="text-[1rem]">About Us</p>
-          <h1
+          <small className="text-[1rem]">About Us</small>
+          <p
             className={`${styles["about__title"]} font-bold text-[2.875rem] whitespace-nowrap`}
           >
             WHO WE ARE
-          </h1>
+          </p>
           <p className="my-10">
             Speed Architectural Technology Co, a SPEETECH group of company in
             AlKhobar, is one of the leading Contracting & Trading companies in
